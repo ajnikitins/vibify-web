@@ -9,7 +9,9 @@
   "scripts": {
     "clean": "rm dist/bundle.js",
     "start": "parcel src/index.html",
-    "build-prod": "parcel build src/index.html"
+    "build-prod": "parcel build src/index.html",
+    "predeploy": "npm run build-prod",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
@@ -21,6 +23,7 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "eslint": "^7.17.0",
+    "gh-pages": "^3.1.0",
     "parcel-bundler": "^1.12.4"
   }
 }
