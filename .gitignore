@@ -1,7 +1,8 @@
 .cache/
 coverage/
 dist/*
-#!dist/index.html
+!dist/CNAME
+!dist/_config.yml
 node_modules/
 *.log
 
