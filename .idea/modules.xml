@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/vibify-web.iml" filepath="$PROJECT_DIR$/vibify-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../vibify-web-backend/vibify-web-backend.iml" filepath="$PROJECT_DIR$/../vibify-web-backend/vibify-web-backend.iml" />
     </modules>
   </component>
 </project>
