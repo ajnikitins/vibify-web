@@ -19,7 +19,8 @@
   "dependencies": {
     "bootstrap": "^5.0.0-beta1",
     "firebase": "^8.2.1",
-    "@popperjs/core": "^2.6.0"
+    "@popperjs/core": "^2.6.0",
+    "crypto-random-string": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
