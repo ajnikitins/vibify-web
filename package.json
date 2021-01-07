@@ -17,10 +17,9 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^5.0.0-beta1",
     "firebase": "^8.2.1",
-    "jquery": "^3.5.1",
-    "popper.js": "^1.16.1"
+    "@popperjs/core": "^2.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
