@@ -8,18 +8,21 @@
 <div id="app">
   <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid">
-      <h1 class="navbar-brand mb-0">VIBIFY</h1>
-      <button type="button" class="btn btn-success ml-auto" id="button-login">Login to Spotify</button>
-      <!--TODO: Add profile picture -->
+        <h1 class="navbar-brand mb-0">VIBIFY</h1>
+        <div class="d-flex align-items-center" id="container-login">
+          <button type="button" class="btn btn-success" id="button-login">Login To Spotify</button>
+        </div>
+        <div class="d-none align-items-center" id="container-userinfo">
+          <h1 class="navbar-brand mb-0 me-2" id="text-displayname"></h1>
+          <img src="./public/spotify_icon.png" alt="User Spotify profile image" class="rounded-circle me-4" style="height: 38px" id="image-profile"/>
+          <button type="button" class="btn btn-danger" id="button-logout">Log Out</button>
+        </div>
     </div>
   </nav>
   <div class="container">
     <div class="row justify-content-start align-items-center">
       <div class="col">
         A
-      </div>
-      <div class="col">
-        B
       </div>
     </div>
   </div>

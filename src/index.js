@@ -20,19 +20,25 @@ class App {
   constructor() {
     this.app = firebase.initializeApp(firebaseConfig);
 
+    document.addEventListener('DOMContentLoaded', this.loadElements.bind(this));
+
     const toastElList = [].slice.call(document.querySelectorAll('.toast'))
     this.toastList = toastElList.map((toastEl) => new Toast(toastEl));
-
-    this.loginButton = document.getElementById('button-login');
-
-    this.loginButton.addEventListener('click', this.onLoginButtonClick.bind(this));
-    this.app.auth().onAuthStateChanged(this.onAuthStateChanged.bind(this));
-
-    console.log(this.app.auth().currentUser);
   }
 
-  onLoginButtonClick() {
-    window.open(`${process.env.BACKEND_URI}${process.env.BACKEND_REDIRECT_PATH}`, 'firebaseAuth', 'height=315,width=400');
+  loadElements() {
+    this.loginButton = document.getElementById('button-login');
+    this.logoutButton = document.getElementById('button-logout');
+
+    this.userinfoContainer = document.getElementById('container-userinfo');
+    this.loginContainer = document.getElementById('container-login');
+
+    this.nameContainer = document.getElementById('text-displayname');
+    this.profilePicture = document.getElementById('image-profile');
+
+    this.loginButton.addEventListener('click', this.onLoginButtonClick.bind(this));
+    this.logoutButton.addEventListener('click', this.onLogoutButtonClick.bind(this));
+    this.app.auth().onAuthStateChanged(this.onAuthStateChanged.bind(this));
   }
 
   onAuthStateChanged(user) {
@@ -41,12 +47,25 @@ class App {
     if (user) {
       this.lastUid = user.uid;
       this.user = user;
-      //TODO: add user info parsing
-      console.log(this.user);
+
+      this.nameContainer.innerText = user.displayName;
+      this.profilePicture.src = user.photoURL;
+
+      this.loginContainer.classList.replace('d-flex', 'd-none');
+      this.userinfoContainer.classList.replace('d-none', 'd-flex');
     } else {
       this.lastUid = null;
-
+      this.loginContainer.classList.replace('d-none', 'd-flex');
+      this.userinfoContainer.classList.replace('d-flex', 'd-none');
     }
+  }
+
+  onLoginButtonClick() {
+    window.open(`${process.env.BACKEND_URI}${process.env.BACKEND_REDIRECT_PATH}`, 'firebaseAuth', 'height=315,width=400');
+  }
+
+  onLogoutButtonClick() {
+    firebase.auth().signOut();
   }
 }
 
