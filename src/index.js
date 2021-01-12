@@ -30,6 +30,8 @@ class App {
     this.loginButton = document.getElementById('button-login');
     this.logoutButton = document.getElementById('button-logout');
 
+    this.startButton = document.getElementById('button-start');
+
     this.userinfoContainer = document.getElementById('container-userinfo');
     this.loginContainer = document.getElementById('container-login');
 
@@ -38,6 +40,8 @@ class App {
 
     this.loginButton.addEventListener('click', this.onLoginButtonClick.bind(this));
     this.logoutButton.addEventListener('click', this.onLogoutButtonClick.bind(this));
+    this.startButton.addEventListener('click', this.onStartButtonClick.bind(this));
+
     this.app.auth().onAuthStateChanged(this.onAuthStateChanged.bind(this));
   }
 
@@ -51,12 +55,14 @@ class App {
       this.nameContainer.innerText = user.displayName;
       this.profilePicture.src = user.photoURL;
 
-      this.loginContainer.classList.replace('d-flex', 'd-none');
-      this.userinfoContainer.classList.replace('d-none', 'd-flex');
+      this.loginContainer.classList.toggle('visually-hidden');
+      this.userinfoContainer.classList.toggle('visually-hidden');
+      this.startButton.classList.toggle('visually-hidden');
     } else {
       this.lastUid = null;
-      this.loginContainer.classList.replace('d-none', 'd-flex');
-      this.userinfoContainer.classList.replace('d-flex', 'd-none');
+      this.loginContainer.classList.toggle('visually-hidden');
+      this.userinfoContainer.classList.toggle('visually-hidden');
+      this.startButton.classList.toggle('visually-hidden');
     }
   }
 
@@ -66,6 +72,10 @@ class App {
 
   onLogoutButtonClick() {
     firebase.auth().signOut();
+  }
+
+  onStartButtonClick() {
+
   }
 }
 

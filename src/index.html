@@ -4,49 +4,50 @@
   <title>Vibify</title>
   <meta charset="utf-8">
 </head>
-<body>
-<div id="app">
-  <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <h1 class="navbar-brand mb-0">VIBIFY</h1>
-        <div class="d-flex align-items-center" id="container-login">
-          <button type="button" class="btn btn-success" id="button-login">Login To Spotify</button>
-        </div>
-        <div class="d-none align-items-center" id="container-userinfo">
-          <h1 class="navbar-brand mb-0 me-2" id="text-displayname"></h1>
-          <img src="./public/spotify_icon.png" alt="User Spotify profile image" class="rounded-circle me-4" style="height: 38px" id="image-profile"/>
-          <button type="button" class="btn btn-danger" id="button-logout">Log Out</button>
-        </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row justify-content-start align-items-center">
-      <div class="col">
-        A
+<body class="vh-100">
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <h1 class="navbar-brand mb-0">VIBIFY</h1>
+      <div class="d-flex align-items-center" id="container-login">
+        <button type="button" class="btn btn-success" id="button-login">Login To Spotify</button>
+      </div>
+      <div class="d-flex align-items-center visually-hidden" id="container-userinfo">
+        <h1 class="navbar-brand mb-0 me-2" id="text-displayname"></h1>
+        <img src="./public/spotify_icon.png" alt="User Spotify profile image" class="rounded-circle me-4" style="height: 38px" id="image-profile"/>
+        <button type="button" class="btn btn-danger" id="button-logout">Log Out</button>
+      </div>
+  </div>
+</nav>
+
+<div class="container position-absolute top-50 start-50 translate-middle visually-hidden" id="button-start">
+  <div class="row">
+    <div class="col">
+      <div class="d-grid col-12">
+        <button type="button" class="btn btn-success fs-2">START THE APP</button>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="toast-container position-absolute p-3 bottom-0 end-0">
-    <div class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true" id="toast_error">
-      <div class="toast-header">
-        <i class="fas fa-exclamation-triangle"></i>
-        <strong class="me-auto ms-2 fs-5">ERROR</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body text-white fs-6" id="toast_error_text">
-        Hello, world! This is a toast message.
-      </div>
+<div class="toast-container position-absolute p-3 bottom-0 end-0">
+  <div class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true" id="toast_error">
+    <div class="toast-header">
+      <i class="fas fa-exclamation-triangle"></i>
+      <strong class="me-auto ms-2 fs-5">ERROR</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
-    <div class="toast bg-success" role="alert" aria-live="assertive" aria-atomic="true" id="toast_success">
-      <div class="toast-header">
-        <i class="fas fa-check"></i>
-        <strong class="me-auto ms-2 fs-5">SUCCESS</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body text-white fs-6" id="toast_success_text">
-        Hello, world! This is a toast message.
-      </div>
+    <div class="toast-body text-white fs-6" id="toast_error_text">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
+  <div class="toast bg-success" role="alert" aria-live="assertive" aria-atomic="true" id="toast_success">
+    <div class="toast-header">
+      <i class="fas fa-check"></i>
+      <strong class="me-auto ms-2 fs-5">SUCCESS</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body text-white fs-6" id="toast_success_text">
+      Hello, world! This is a toast message.
     </div>
   </div>
 </div>
