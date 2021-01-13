@@ -6,6 +6,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/database';
+import {postData} from "./util";
 
 const firebaseConfig = {
   apiKey: process.env.FB_API_KEY,
@@ -94,6 +95,25 @@ class App {
 
       if (this.startButton.classList.contains('visually-hidden'))
         this.startButton.classList.remove('visually-hidden');
+    }
+  }
+
+  onUserDesync() {
+    firebase.auth().signOut();
+    //TODO: Add toast that auth state is malformed
+  }
+
+  async fetchSpotifyApi(url = '/', data) {
+    const response = await postData(`${process.env.BACKEND_URI}/api${url}`, data);
+
+    if (!response.ok) {
+      switch (response.status) {
+        case 401:
+          this.onUserDesync();
+          return Promise.reject("User has been desynced");
+      }
+    } else {
+     return response.json();
     }
   }
 }
