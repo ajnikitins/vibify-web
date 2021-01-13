@@ -55,14 +55,11 @@ class App {
       this.nameContainer.innerText = user.displayName;
       this.profilePicture.src = user.photoURL;
 
-      this.loginContainer.classList.toggle('visually-hidden');
-      this.userinfoContainer.classList.toggle('visually-hidden');
-      this.startButton.classList.toggle('visually-hidden');
+      this.showLoginOrInfo(false);
     } else {
       this.lastUid = null;
-      this.loginContainer.classList.toggle('visually-hidden');
-      this.userinfoContainer.classList.toggle('visually-hidden');
-      this.startButton.classList.toggle('visually-hidden');
+
+      this.showLoginOrInfo(true);
     }
   }
 
@@ -76,6 +73,28 @@ class App {
 
   onStartButtonClick() {
 
+  }
+
+  showLoginOrInfo(shouldShowLogin) {
+    if (shouldShowLogin) {
+      if (this.loginContainer.classList.contains('visually-hidden'))
+        this.loginContainer.classList.remove('visually-hidden');
+
+      if (!this.userinfoContainer.classList.contains('visually-hidden'))
+        this.userinfoContainer.classList.add('visually-hidden');
+
+      if (!this.startButton.classList.contains('visually-hidden'))
+        this.startButton.classList.add('visually-hidden');
+    } else {
+      if (!this.loginContainer.classList.contains('visually-hidden'))
+        this.loginContainer.classList.add('visually-hidden');
+
+      if (this.userinfoContainer.classList.contains('visually-hidden'))
+        this.userinfoContainer.classList.remove('visually-hidden');
+
+      if (this.startButton.classList.contains('visually-hidden'))
+        this.startButton.classList.remove('visually-hidden');
+    }
   }
 }
 
