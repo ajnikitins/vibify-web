@@ -1843,6 +1843,18 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
+"@sgratzl/boxplots@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@sgratzl/boxplots/-/boxplots-1.2.2.tgz#fd5399463555c1bbfc5026b97b2e3b1cb7bab6eb"
+  integrity sha512-4KFIxtkEey53dejcfXYhnU87v7vTsXeW79m3Rl1/1jybw/YMWOoiaic8TZof+zCWF9cHWrAa3YnESQsqsKpvUw==
+
+"@sgratzl/chartjs-chart-boxplot@^3.0.0-rc.0":
+  version "3.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@sgratzl/chartjs-chart-boxplot/-/chartjs-chart-boxplot-3.0.0-rc.0.tgz#678dd70788df8f23c8fb56e39da26ebe0adfc45e"
+  integrity sha512-WpOsE71nWMFpz21YdHxiUK2UJt3taGKoy0x4afsz6EbSrDhtWQkkWXVvVXsg8gjYd/YUg93I3zbUpR14Meu9Fw==
+  dependencies:
+    "@sgratzl/boxplots" "^1.2.2"
+
 "@types/http-proxy@^1.17.4":
   version "1.17.5"
   resolved "https://registry.yarnpkg.com/@types/http-proxy/-/http-proxy-1.17.5.tgz#c203c5e6e9dc6820d27a40eb1e511c70a220423d"
@@ -2473,6 +2485,11 @@ chalk@^4.0.0, chalk@^4.1.0:
   dependencies:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
+
+chart.js@^3.0.0-rc:
+  version "3.0.0-rc"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-3.0.0-rc.tgz#ee2b25cd0d8d1986a6fda872379840f2adce08df"
+  integrity sha512-Q3zdByYSHV1BhEyb2FDIQ5YxKQQJr3UtBH3DDQ39tsO/9Dme1EPxS0Iaay+Y5aArcaZj0lG73RlaGr/KH0dyJg==
 
 chrome-trace-event@^1.0.2:
   version "1.0.2"

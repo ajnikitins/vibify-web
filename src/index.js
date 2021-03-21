@@ -9,6 +9,8 @@ import 'firebase/firestore';
 import 'firebase/database';
 import {postData} from "./js/utils";
 import UserController from "./js/userController";
+import {createSongChart, parseSongListFeatures} from "./js/songs";
+import {songList} from "./examples";
 
 const firebaseConfig = {
   apiKey: process.env.FB_API_KEY,
@@ -37,11 +39,16 @@ class App {
   }
 
   onRefreshButtonClick() {
-    this.fetchSpotifyApi('/songs').then(data => {
-      console.log(data);
-    }).catch(err => {
-      console.error(err);
-    });
+    // this.fetchSpotifyApi('/songs').then(data => {
+    //   console.log(data);
+    // }).catch(err => {
+    //   console.error(err);
+    // });
+
+    const featureList = parseSongListFeatures(songList);
+
+    const ctx = document.getElementById("chart").getContext("2d");
+    createSongChart(ctx, featureList);
   }
 
   async fetchSpotifyApi(url = '/', data) {
@@ -60,3 +67,5 @@ class App {
 }
 
 new App();
+
+// TODO: Remove spotify logo for placeholder image
