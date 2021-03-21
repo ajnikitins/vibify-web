@@ -7,7 +7,7 @@ import './css/custom.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/database';
-import {postData} from "./js/util";
+import {postData} from "./js/utils";
 import UserController from "./js/userController";
 
 const firebaseConfig = {
