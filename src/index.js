@@ -3,11 +3,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '@fortawesome/fontawesome-free/js/all.js'
 
 import firebase from 'firebase/app';
-import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/database';
-import {postData} from "./util";
-import UserController from "./userController";
+import {postData} from "./js/util";
+import UserController from "./js/userController";
 
 const firebaseConfig = {
   apiKey: process.env.FB_API_KEY,
