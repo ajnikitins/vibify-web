@@ -5,25 +5,50 @@
   <meta charset="utf-8">
 </head>
 <body class="vh-100">
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar fixed-top navbar-dark bg-dark">
     <div class="container-fluid">
       <h1 class="navbar-brand mb-0">VIBIFY</h1>
       <div class="d-flex align-items-center" id="container-login">
         <button type="button" class="btn btn-success" id="button-login">Login To Spotify</button>
       </div>
       <div class="d-flex align-items-center visually-hidden" id="container-userinfo">
-        <h1 class="navbar-brand mb-0 me-2" id="text-displayname"></h1>
-        <img src="./public/spotify_icon.png" alt="User Spotify profile image" class="rounded-circle me-4" style="height: 38px" id="image-profile"/>
+        <h1 class="navbar-brand mb-0 me-3" id="text-displayname"></h1>
+        <img src="./public/spotify_icon.png" alt="User Spotify profile image" class="rounded-circle me-3 custom-img-profile"  id="image-profile"/>
         <button type="button" class="btn btn-danger" id="button-logout">Log Out</button>
       </div>
   </div>
 </nav>
 
-<div class="container position-absolute top-50 start-50 translate-middle visually-hidden" id="button-start">
-  <div class="row">
-    <div class="col">
-      <div class="d-grid col-12">
-        <button type="button" class="btn btn-success fs-2">START THE APP</button>
+<div class="container visually-hidden h-100" id="button-start">
+  <div class="row h-100 align-items-center">
+    <div class="col mt-4 h-75">
+      <div class="row h-100">
+        <div class="col-5 mh-100">
+          <div class="d-flex flex-column mh-100">
+            <div class="input-group mb-2">
+              <span class="input-group-text"><i class="fas fa-search"></i></span>
+              <input type="text" class="form-control" placeholder="Search for songs" id="input-search">
+              <button class="btn btn-success" type="button"><i class="fas fa-sync" id="button-refresh"></i></button>
+            </div>
+            <div class="list-group border rounded flex-grow-1 custom-list-group user-select-none">
+              <a class="list-group-item list-group-item-action active">
+                <div class="d-flex align-items-center">
+                  <img class="me-3" width=32px height=10% src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg">
+                  <div class="d-inline-block text-truncate">
+                    <div class="fs-6 text-truncate fw-bold">Mr. Capgras Encounters a Secondhand Vanity: Tulpamancer’s Prosopagnosia​/​Pareidolia (As Direct Result of Trauma to the Fusiform Gyrus)</div>
+                    <div class="text-muted text-truncate lh-1">Will Wood and the Tapeworms</div>
+                  </div>
+                </div>
+              </a>
+              <a class="list-group-item list-group-item-action">Test song</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-7 border rounded">
+          <div class="">
+
+          </div>
+        </div>
       </div>
     </div>
   </div>

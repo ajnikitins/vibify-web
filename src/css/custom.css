@@ -1,0 +1,51 @@
+/* SONG LIST */
+.custom-list-group {
+  overflow-y: auto;
+}
+
+.custom-list-group > * {
+  border-left: 0;
+  border-right: 0;
+}
+
+.custom-list-group > *:first-child {
+  border-top: 0;
+}
+
+.custom-list-group > *:last-child {
+  border-bottom: 0;
+}
+
+.custom-list-group .active {
+  background: lightblue;
+  border-color: lightblue;
+  color: #495057;
+}
+
+/* PROFILE PIC */
+.custom-img-profile {
+  height: 2rem;
+}
+
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #AAA;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}

@@ -2,6 +2,8 @@ import {Toast} from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import '@fortawesome/fontawesome-free/js/all.js'
 
+import './css/custom.css';
+
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/database';
