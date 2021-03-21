@@ -11,7 +11,7 @@ export default class UserController {
     this.logoutButton = document.getElementById('button-logout');
     this.logoutButton.addEventListener('click', this.onLogoutButtonClick.bind(this));
 
-    this.startButton = document.getElementById('button-start');
+    this.appContainer = document.getElementById('container-app');
 
     this.userinfoContainer = document.getElementById('container-userinfo');
     this.loginContainer = document.getElementById('container-login');
@@ -56,8 +56,8 @@ export default class UserController {
       if (!this.userinfoContainer.classList.contains('visually-hidden'))
         this.userinfoContainer.classList.add('visually-hidden');
 
-      if (!this.startButton.classList.contains('visually-hidden'))
-        this.startButton.classList.add('visually-hidden');
+      if (!this.appContainer.classList.contains('visually-hidden'))
+        this.appContainer.classList.add('visually-hidden');
     } else {
       if (!this.loginContainer.classList.contains('visually-hidden'))
         this.loginContainer.classList.add('visually-hidden');
@@ -65,8 +65,8 @@ export default class UserController {
       if (this.userinfoContainer.classList.contains('visually-hidden'))
         this.userinfoContainer.classList.remove('visually-hidden');
 
-      if (this.startButton.classList.contains('visually-hidden'))
-        this.startButton.classList.remove('visually-hidden');
+      if (this.appContainer.classList.contains('visually-hidden'))
+        this.appContainer.classList.remove('visually-hidden');
     }
   }
 

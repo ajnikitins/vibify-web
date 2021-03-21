@@ -32,12 +32,16 @@ class App {
   loadElements() {
     this.userController = new UserController(this.app);
 
-    this.startButton = document.getElementById('button-start');
-    this.startButton.addEventListener('click', this.onStartButtonClick.bind(this));
+    this.refreshButton = document.getElementById('button-refresh');
+    this.refreshButton.addEventListener('click', this.onRefreshButtonClick.bind(this));
   }
 
-  onStartButtonClick() {
-
+  onRefreshButtonClick() {
+    this.fetchSpotifyApi('/songs').then(data => {
+      console.log(data);
+    }).catch(err => {
+      console.error(err);
+    });
   }
 
   async fetchSpotifyApi(url = '/', data) {
