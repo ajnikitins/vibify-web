@@ -100,6 +100,7 @@ class App {
 
   onUserDesync() {
     firebase.auth().signOut();
+    this.showLoginOrInfo(true);
     //TODO: Add toast that auth state is malformed
   }
 
