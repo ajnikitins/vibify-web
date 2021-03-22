@@ -36,20 +36,127 @@
         </div>
         <div class="col-9 border rounded p-3">
           <div class="h-100 d-flex flex-column">
-            <div class="flex-fill">
+            <div class="mb-3">
               <h4 class="border-bottom">
                 Filters
               </h4>
-              <div id="container-filters" class="">
-                Test
+              <div class="input-group mb-3">
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <button type="button" class="btn btn-success">Save</button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Test Filter</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Create new filter</a></li>
+                </ul>
+                <input type="text" class="form-control" placeholder="Filter name">
+                <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
               </div>
+              <div class="row mb-2">
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-text">Acousticness</span>
+                    <select class="form-select">
+                      <option value="0">=</option>
+                      <option value="1">≤</option>
+                      <option value="2" selected>≥</option>
+                    </select>
+                    <input type="number" class="form-control" min="0" max="1" step="0.01" value="0">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-text">Danceability</span>
+                    <select class="form-select">
+                      <option value="0">=</option>
+                      <option value="1">≤</option>
+                      <option value="2" selected>≥</option>
+                    </select>
+                    <input type="number" class="form-control" min="0" max="1" step="0.01" value="0">
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-text">Energy</span>
+                    <select class="form-select">
+                      <option value="0">=</option>
+                      <option value="1">≤</option>
+                      <option value="2" selected>≥</option>
+                    </select>
+                    <input type="number" class="form-control" min="0" max="1" step="0.01" value="0">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-text">Instrumentalness</span>
+                    <select class="form-select">
+                      <option value="0">=</option>
+                      <option value="1">≤</option>
+                      <option value="2" selected>≥</option>
+                    </select>
+                    <input type="number" class="form-control" min="0" max="1" step="0.01" value="0">
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-text">Liveness</span>
+                    <select class="form-select">
+                      <option value="0">=</option>
+                      <option value="1">≤</option>
+                      <option value="2" selected>≥</option>
+                    </select>
+                    <input type="number" class="form-control" min="0" max="1" step="0.01" value="0">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-text">Speechiness</span>
+                    <select class="form-select">
+                      <option value="0">=</option>
+                      <option value="1">≤</option>
+                      <option value="2" selected>≥</option>
+                    </select>
+                    <input type="number" class="form-control" min="0" max="1" step="0.01" value="0">
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-text">Valence</span>
+                    <select class="form-select">
+                      <option value="0">=</option>
+                      <option value="1">≤</option>
+                      <option value="2" selected>≥</option>
+                    </select>
+                    <input type="number" class="form-control" min="0" max="1" step="0.01" value="0">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="input-group">
+                    <span class="input-group-text">Tempo</span>
+                    <select class="form-select">
+                      <option value="0">=</option>
+                      <option value="1">≤</option>
+                      <option value="2" selected>≥</option>
+                    </select>
+                    <input type="number" class="form-control" min="0" max="1" step="0.01" value="0">
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-success mt-auto">Create playlist from template</button>
             </div>
             <div class="flex-fill d-flex flex-column">
               <h4 class="border-bottom">
                   Statistics
               </h4>
               <div id="container-stats" class="flex-grow-1">
-                <div class="chart-container" style="position: relative; width: 50%">
+                <div class="chart-container" style="position: relative; height: 100%">
                   <canvas id="chart"></canvas>
                 </div>
               </div>
