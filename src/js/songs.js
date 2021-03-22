@@ -118,7 +118,6 @@ export class SongList {
   }
 
   createSongChart(ctx) {
-    console.log(this.audioFeatures);
     if (this.chart === null) {
       this.chart = new BoxPlotChart(ctx, {
         // The data for our dataset
@@ -146,7 +145,8 @@ export class SongList {
             legend: {
               display: false
             }
-          }
+          },
+          maintainAspectRatio: false,
         }
       });
     } else {

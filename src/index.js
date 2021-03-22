@@ -42,28 +42,6 @@ class App {
 
     this.searchInput = document.getElementById("input-search");
     this.searchInput.addEventListener('input', debounce(200, this.songList.filterSongList.bind(this.songList)));
-
-    this.filtersButton = document.getElementById("button-filters");
-    this.statsButton = document.getElementById("button-stats");
-
-    const toggleCollapses = (id) => {
-      const collapse = new Collapse(document.getElementById(id));
-      collapse.toggle();
-    }
-
-    this.filtersButton.addEventListener('click', () => {
-      this.filtersButton.classList.toggle("collapsed");
-      this.statsButton.classList.toggle("collapsed");
-      toggleCollapses("container-filters");
-      toggleCollapses("container-stats");
-    });
-
-    this.statsButton.addEventListener('click', () => {
-      this.filtersButton.classList.toggle("collapsed");
-      this.statsButton.classList.toggle("collapsed");
-      toggleCollapses("container-filters");
-      toggleCollapses("container-stats");
-    });
   }
 
   onRefreshButtonClick() {
