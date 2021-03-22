@@ -7,7 +7,7 @@ import './css/custom.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/database';
-import {postData} from "./js/utils";
+import {postData, debounce} from "./js/utils";
 import UserController from "./js/userController";
 import {SongList} from "./js/songs";
 import {exampleSongList} from "./examples";
@@ -39,6 +39,9 @@ class App {
 
     this.songListContainer = document.getElementById("container-song-list")
     this.songList = new SongList(this.songListContainer);
+
+    this.searchInput = document.getElementById("input-search");
+    this.searchInput.addEventListener('input', debounce(200, this.songList.filterSongList.bind(this.songList)));
   }
 
   onRefreshButtonClick() {
@@ -50,7 +53,8 @@ class App {
 
     this.songList.setSongData(exampleSongList);
 
-    this.songList.generateSongList();
+    this.searchInput.value = "";
+    this.songList.renderSongList();
 
     this.songList.createSongChart("chart");
   }

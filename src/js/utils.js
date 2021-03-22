@@ -1,5 +1,5 @@
 export async function postData(url = '', data = {}) {
-  const response = await fetch(url, {
+  return await fetch(url, {
     method: 'POST',
     mode: "cors",
     credentials: "include",
@@ -8,6 +8,28 @@ export async function postData(url = '', data = {}) {
     },
     body: JSON.stringify(data),
   });
+}
 
-  return response;
+export function debounce(timeout, fn) {
+  let inDebounce = null;
+  return (args) => {
+    clearTimeout(inDebounce);
+    inDebounce = setTimeout(() => fn(args), timeout);
+  }
+}
+
+export function throttle(timeout, fn) {
+  let inThrottle = false;
+
+  return args => {
+    if (inThrottle) {
+      return;
+    }
+
+    inThrottle = true;
+    fn(args);
+    setTimeout(() => {
+      inThrottle = false;
+    }, timeout);
+  };
 }

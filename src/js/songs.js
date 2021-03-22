@@ -1,9 +1,11 @@
 import {BoxPlotChart} from "@sgratzl/chartjs-chart-boxplot";
+import {quickScore} from "quick-score";
 
 export class SongList {
   constructor(container) {
     this.container = container;
     this.songs = [];
+    this.songHTML = new Map();
 
     this.audioFeatures = {};
 
@@ -21,27 +23,41 @@ export class SongList {
     return this.songs.find((song) => song.id === id);
   }
 
-  generateSongList() {
+  filterSongList() {
+    const pattern = document.getElementById("input-search").value;
+
+    for (const song of this.songs) {
+      const songElement = document.getElementById(`song-${song.id}`);
+      const searchThreshold = 0.4;
+
+      if (pattern === ""
+          || quickScore(song.name, pattern) >= searchThreshold
+          || quickScore(song.artistName, pattern) >= searchThreshold
+          || quickScore(song.albumName, pattern) >= searchThreshold) {
+          songElement.classList.remove("visually-hidden");
+      } else {
+        songElement.classList.add("visually-hidden");
+      }
+    }
+  }
+
+  renderSongList() {
     while (this.container.firstChild) {
       this.container.removeChild(this.container.firstChild);
     }
 
-    const songListHTML = this.createSongListHTML(this.songs);
+    for (const song of this.songs) {
+      let item;
 
-    songListHTML.forEach((songListItem) => {
-      this.container.appendChild(songListItem);
-    });
-  }
+      if (this.songHTML.has(song.id)) {
+        console.log(1);
+        item = this.songHTML.get(song.id);
+      } else {
+        item = document.createElement("a");
+        item.classList.add("list-group-item", "list-group-item-action");
+        item.id = `song-${song.id}`;
 
-  createSongListHTML(songs) {
-    const items = [];
-
-    for (const song of songs) {
-      const item = document.createElement("a");
-      item.classList.add("list-group-item", "list-group-item-action");
-      item.id = `song-${song.id}`;
-
-      item.innerHTML = `
+        item.innerHTML = `
         <div class="d-flex align-items-center">
           <img class="me-3" width=40px src="${song.images[2].url}" alt="Album art for ${song.name}">
           <div class="d-inline-block text-truncate">
@@ -50,29 +66,30 @@ export class SongList {
           </div>
         </div>`;
 
-      item.addEventListener('click', (ev) => {
-        ev.preventDefault();
+        item.addEventListener('click', (ev) => {
+          ev.preventDefault();
 
-        if (this.selectedSongId === song.id) {
-          item.classList.remove("active");
-          this.selectedSongId = "";
-        } else {
-          const prevSongElement = document.getElementById(
-              `song-${this.selectedSongId}`);
+          if (this.selectedSongId === song.id) {
+            item.classList.remove("active");
+            this.selectedSongId = "";
+          } else {
+            const prevSongElement = document.getElementById(
+                `song-${this.selectedSongId}`);
 
-          if (prevSongElement !== null) {
-            prevSongElement.classList.remove("active");
+            if (prevSongElement !== null) {
+              prevSongElement.classList.remove("active");
+            }
+            item.classList.add("active");
+
+            this.selectedSongId = song.id;
           }
-          item.classList.add("active");
+        });
 
-          this.selectedSongId = song.id;
-        }
-      });
+        this.songHTML.set(song.id, item);
+      }
 
-      items.push(item);
+      this.container.appendChild(item);
     }
-
-    return items;
   }
 
   constructAudioFeatures() {

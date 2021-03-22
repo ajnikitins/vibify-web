@@ -1848,10 +1848,10 @@
   resolved "https://registry.yarnpkg.com/@sgratzl/boxplots/-/boxplots-1.2.2.tgz#fd5399463555c1bbfc5026b97b2e3b1cb7bab6eb"
   integrity sha512-4KFIxtkEey53dejcfXYhnU87v7vTsXeW79m3Rl1/1jybw/YMWOoiaic8TZof+zCWF9cHWrAa3YnESQsqsKpvUw==
 
-"@sgratzl/chartjs-chart-boxplot@^3.0.0-rc.0":
-  version "3.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@sgratzl/chartjs-chart-boxplot/-/chartjs-chart-boxplot-3.0.0-rc.0.tgz#678dd70788df8f23c8fb56e39da26ebe0adfc45e"
-  integrity sha512-WpOsE71nWMFpz21YdHxiUK2UJt3taGKoy0x4afsz6EbSrDhtWQkkWXVvVXsg8gjYd/YUg93I3zbUpR14Meu9Fw==
+"@sgratzl/chartjs-chart-boxplot@^3.0.0-rc.1":
+  version "3.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@sgratzl/chartjs-chart-boxplot/-/chartjs-chart-boxplot-3.0.0-rc.1.tgz#f66c7777c42ddbde3feedfcd365648dab0d230e1"
+  integrity sha512-SefGiwYHPM4L3gH5Wew2qhDAUidRtPn4yD37nn4bC8Zb1/t58VnxE/X6tIVVJDFQgfGBgobi1+PbGYYxKQdgpA==
   dependencies:
     "@sgratzl/boxplots" "^1.2.2"
 
@@ -2240,7 +2240,7 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap@^5.0.0-beta1:
+bootstrap@^5.0.0-beta2:
   version "5.0.0-beta2"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.0.0-beta2.tgz#ab1504a12807fa58e5e41408e35fcea42461e84b"
   integrity sha512-e+uPbPHqTQWKyCX435uVlOmgH9tUt0xtjvyOC7knhKgOS643BrQKuTo+KecGpPV7qlmOyZgCfaM4xxPWtDEN/g==
@@ -2449,9 +2449,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001181:
-  version "1.0.30001203"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001203.tgz#a7a34df21a387d9deffcd56c000b8cf5ab540580"
-  integrity sha512-/I9tvnzU/PHMH7wBPrfDMSuecDeUKerjCPX7D0xBbaJZPxoT9m+yYxt0zCTkcijCkjTdim3H56Zm0i5Adxch4w==
+  version "1.0.30001204"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001204.tgz#256c85709a348ec4d175e847a3b515c66e79f2aa"
+  integrity sha512-JUdjWpcxfJ9IPamy2f5JaRDCaqJOxDzOSKtbdx4rH9VivMd1vIzoPumsJa9LoMIi4Fx2BV2KZOxWhNkBjaYivQ==
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -2486,10 +2486,10 @@ chalk@^4.0.0, chalk@^4.1.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chart.js@^3.0.0-rc:
-  version "3.0.0-rc"
-  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-3.0.0-rc.tgz#ee2b25cd0d8d1986a6fda872379840f2adce08df"
-  integrity sha512-Q3zdByYSHV1BhEyb2FDIQ5YxKQQJr3UtBH3DDQ39tsO/9Dme1EPxS0Iaay+Y5aArcaZj0lG73RlaGr/KH0dyJg==
+chart.js@^3.0.0-rc.2:
+  version "3.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-3.0.0-rc.2.tgz#2899079f074945f0100f4e15d8d86138f5919118"
+  integrity sha512-j/URLMDPYdJRcDft4bVtbeA48qDjitXNcAMGXhDzI+yenvgTyKe+TJvz0ISrqHvsk826w0BpaTTm9wmo4nSbUA==
 
 chrome-trace-event@^1.0.2:
   version "1.0.2"
@@ -2623,9 +2623,9 @@ commander@^5.0.0:
   integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
 
 commander@^7.0.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-7.1.0.tgz#f2eaecf131f10e36e07d894698226e36ae0eb5ff"
-  integrity sha512-pRxBna3MJe6HKnBGsDyMv8ETbptw3axEdYHoqNh7gu5oDcew8fs0xnivZGm06Ogk8zGAJ9VX+OPEr2GXEQK4dg==
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
+  integrity sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -5794,7 +5794,7 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^8.0.5, postcss@^8.2.1:
+postcss@^8.0.5, postcss@^8.2.1, postcss@^8.2.8:
   version "8.2.8"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.8.tgz#0b90f9382efda424c4f0f69a2ead6f6830d08ece"
   integrity sha512-1F0Xb2T21xET7oQV9eKuctbM9S7BC0fetoHCc4H13z0PT6haiRLP4T0ZY4XWh7iLP0usgqykT6p9B2RtOf4FPw==
@@ -5973,9 +5973,14 @@ querystring@^0.2.0:
   integrity sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==
 
 queue-microtask@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.2.tgz#abf64491e6ecf0f38a6502403d4cda04f372dfd3"
-  integrity sha512-dB15eXv3p2jDlbOiNLyMabYg1/sXvppd8DP2J3EOCQ0AkuSXCW2tP7mnVouVLJKgUMY6yP0kcQDVpLCN13h4Xg==
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
+  integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
+
+quick-score@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/quick-score/-/quick-score-0.0.10.tgz#4fa956b814ae7e3a2a7e94f7d0716dfa750639f8"
+  integrity sha512-IrDSAI00ifPkR4RjyJvf07hyfw+w2b6SuT18SQS8wOKMfYw4oIolf5wQliWkQ8OJTA7fOTYDzw7be/V3g+rsRA==
 
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"
