@@ -38,6 +38,7 @@ class App {
     this.refreshButton.addEventListener('click', this.onRefreshButtonClick.bind(this));
 
     this.songListContainer = document.getElementById("container-song-list")
+    this.songList = new SongList(this.songListContainer);
   }
 
   onRefreshButtonClick() {
@@ -47,15 +48,11 @@ class App {
     //   console.error(err);
     // });
 
-    const songList = new SongList(exampleSongList);
+    this.songList.setSongData(exampleSongList);
 
-    const songListHTML = songList.createSongListHTML();
+    this.songList.generateSongList();
 
-    songListHTML.forEach((songListItem) => {
-      this.songListContainer.appendChild(songListItem);
-    });
-
-    songList.createSongChart("chart");
+    this.songList.createSongChart("chart");
   }
 
   async fetchSpotifyApi(url = '/', data) {
