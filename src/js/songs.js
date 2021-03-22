@@ -1,5 +1,24 @@
 import {BoxPlotChart} from "@sgratzl/chartjs-chart-boxplot";
 
+export function createSongList(songList) {
+  return songList.map((song) => {
+    const item = document.createElement("a");
+    item.classList.add("list-group-item", "list-group-item-action");
+    item.id = `song-${song.id}`;
+
+    item.innerHTML = `
+<div class="d-flex align-items-center">
+  <img class="me-3" width=40px src="${song.images[2].url}" alt="Album art for ${song.name}">
+  <div class="d-inline-block text-truncate">
+    <div class="fs-6 text-truncate fw-bold">${song.name}</div>
+    <div class="text-muted text-truncate">${song.artistName}</div>
+  </div>
+</div>`;
+
+    return item;
+  });
+}
+
 export function createSongChart(ctx, data) {
   return new BoxPlotChart(ctx, {
     // The data for our dataset

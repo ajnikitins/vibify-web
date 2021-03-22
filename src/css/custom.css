@@ -8,17 +8,30 @@
   border-right: 0;
 }
 
+.custom-list-group > *:hover {
+  background: gainsboro;
+  border-color: gainsboro;
+}
+
+.custom-list-group > *:active {
+  background: skyblue;
+  border-color: skyblue;
+  color: #495057;
+}
+
 .custom-list-group > *:first-child {
   border-top: 0;
+  border-radius: 0;
 }
 
 .custom-list-group > *:last-child {
   border-bottom: 0;
+  border-radius: 0;
 }
 
 .custom-list-group .active {
-  background: lightblue;
-  border-color: lightblue;
+  background: skyblue;
+  border-color: skyblue;
   color: #495057;
 }
 
@@ -42,7 +55,6 @@
 ::-webkit-scrollbar-thumb {
   background: #AAA;
   border-radius: 10px;
-  opacity: 0.9;
 }
 
 /* Handle on hover */

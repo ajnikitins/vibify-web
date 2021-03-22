@@ -9,7 +9,11 @@ import 'firebase/firestore';
 import 'firebase/database';
 import {postData} from "./js/utils";
 import UserController from "./js/userController";
-import {createSongChart, parseSongListFeatures} from "./js/songs";
+import {
+  createSongChart,
+  createSongList,
+  parseSongListFeatures
+} from "./js/songs";
 import {songList} from "./examples";
 
 const firebaseConfig = {
@@ -34,8 +38,10 @@ class App {
   loadElements() {
     this.userController = new UserController(this.app);
 
-    this.refreshButton = document.getElementById('button-refresh');
+    this.refreshButton = document.getElementById("button-refresh");
     this.refreshButton.addEventListener('click', this.onRefreshButtonClick.bind(this));
+
+    this.songListContainer = document.getElementById("container-song-list")
   }
 
   onRefreshButtonClick() {
@@ -44,6 +50,12 @@ class App {
     // }).catch(err => {
     //   console.error(err);
     // });
+
+    const songListItems = createSongList(songList);
+
+    songListItems.forEach((songListItem) => {
+      this.songListContainer.appendChild(songListItem);
+    });
 
     const featureList = parseSongListFeatures(songList);
 
