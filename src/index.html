@@ -31,21 +31,37 @@
               <button class="btn btn-success" type="button" id="button-refresh"><i class="fas fa-sync"></i></button>
             </div>
             <div class="list-group border rounded flex-grow-1 custom-list-group lh-sm user-select-none" id="container-song-list">
-              <a class="list-group-item list-group-item-action active" id="song-example">
-                <div class="d-flex align-items-center">
-                  <img class="me-3" width=40px src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg">
-                  <div class="d-inline-block text-truncate">
-                    <div class="fs-6 text-truncate fw-bold">Mr. Capgras Encounters a Secondhand Vanity: Tulpamancer’s Prosopagnosia​/​Pareidolia (As Direct Result of Trauma to the Fusiform Gyrus)</div>
-                    <div class="text-muted text-truncate">Will Wood and the Tapeworms</div>
-                  </div>
-                </div>
-              </a>
             </div>
           </div>
         </div>
-        <div class="col-9 border rounded">
-          <div class="d-flex flex-column h-100">
-            <canvas id="chart"></canvas>
+        <div class="col-9 border rounded p-0">
+          <div class="accordion accordion-flush h-100 d-flex flex-column" id="container-filters-stats">
+            <div class="accordion-item flex-fill">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" id="button-filters">
+                  Filters
+                </button>
+              </h2>
+              <div id="container-filters" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  Test
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item flex-fill">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" id="button-stats">
+                  Statistics
+                </button>
+              </h2>
+              <div id="container-stats" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <div class="d-flex flex-column h-100">
+                    <canvas id="chart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

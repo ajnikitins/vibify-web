@@ -118,6 +118,7 @@ export class SongList {
   }
 
   createSongChart(ctx) {
+    console.log(this.audioFeatures);
     if (this.chart === null) {
       this.chart = new BoxPlotChart(ctx, {
         // The data for our dataset
