@@ -9,12 +9,8 @@ import 'firebase/firestore';
 import 'firebase/database';
 import {postData} from "./js/utils";
 import UserController from "./js/userController";
-import {
-  createSongChart,
-  createSongList,
-  parseSongListFeatures
-} from "./js/songs";
-import {songList} from "./examples";
+import {SongList} from "./js/songs";
+import {exampleSongList} from "./examples";
 
 const firebaseConfig = {
   apiKey: process.env.FB_API_KEY,
@@ -51,16 +47,15 @@ class App {
     //   console.error(err);
     // });
 
-    const songListItems = createSongList(songList);
+    const songList = new SongList(exampleSongList);
 
-    songListItems.forEach((songListItem) => {
+    const songListHTML = songList.createSongListHTML();
+
+    songListHTML.forEach((songListItem) => {
       this.songListContainer.appendChild(songListItem);
     });
 
-    const featureList = parseSongListFeatures(songList);
-
-    const ctx = document.getElementById("chart").getContext("2d");
-    createSongChart(ctx, featureList);
+    songList.createSongChart("chart");
   }
 
   async fetchSpotifyApi(url = '/', data) {

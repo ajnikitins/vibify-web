@@ -13,9 +13,9 @@
   border-color: gainsboro;
 }
 
-.custom-list-group > *:active {
-  background: skyblue;
-  border-color: skyblue;
+.custom-list-group > *:active, .custom-list-group .active:active {
+  background: DeepSkyBlue;
+  border-color: DeepSkyBlue;
   color: #495057;
 }
 

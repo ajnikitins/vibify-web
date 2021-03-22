@@ -1,4 +1,4 @@
-export const songList = [
+export const exampleSongList = [
   {
     "id": "2UKARCqDrhkYDoVR4FN5Wi",
     "name": "Plug in Baby",
