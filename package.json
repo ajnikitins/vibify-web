@@ -9,7 +9,7 @@
     "last 1 Chrome version"
   ],
   "scripts": {
-    "clean": "rm dist/*.js* dist/*.html dist/*.css* dist/*.png",
+    "clean": "rm ./dist/*.js* ./dist/*.html ./dist/*.css* ./dist/*.png",
     "start": "parcel serve src/*.html",
     "build-prod": "parcel build src/*.html",
     "predeploy": "npm run clean && npm run build-prod",
