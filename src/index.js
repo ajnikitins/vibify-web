@@ -1,4 +1,4 @@
-import {Toast, Collapse} from 'bootstrap';
+import {Toast} from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import '@fortawesome/fontawesome-free/js/all.js'
 
@@ -7,7 +7,7 @@ import './css/custom.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/database';
-import {postData, debounce} from "./js/utils";
+import {postData} from "./js/utils";
 import UserController from "./js/userController";
 import {SongList} from "./js/songs";
 import {exampleSongList} from "./examples";
@@ -37,11 +37,15 @@ class App {
     this.refreshButton = document.getElementById("button-refresh");
     this.refreshButton.addEventListener('click', this.onRefreshButtonClick.bind(this));
 
-    this.songListContainer = document.getElementById("container-song-list")
-    this.songList = new SongList(this.songListContainer);
-
     this.searchInput = document.getElementById("input-search");
-    this.searchInput.addEventListener('input', debounce(200, this.songList.filterSongList.bind(this.songList)));
+    this.filterContainer = document.getElementById("container-filters");
+    this.chartContext = document.getElementById("chart");
+    this.songListContainer = document.getElementById("container-song-list")
+    this.createButton = document.getElementById("button-create");
+    this.resetButton = document.getElementById("button-reset");
+    this.songList = new SongList(
+        this.songListContainer, this.searchInput, this.filterContainer,
+        this.chartContext, this.createButton, this.resetButton);
   }
 
   onRefreshButtonClick() {
@@ -53,10 +57,8 @@ class App {
 
     this.songList.setSongData(exampleSongList);
 
-    this.searchInput.value = "";
     this.songList.renderSongList();
-
-    this.songList.createSongChart("chart");
+    this.songList.clearSearchFilters();
   }
 
   async fetchSpotifyApi(url = '/', data) {

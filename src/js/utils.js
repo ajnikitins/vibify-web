@@ -33,3 +33,22 @@ export function throttle(timeout, fn) {
     }, timeout);
   };
 }
+
+export function fitsConstraints(obj, constr) {
+  for (const property in constr) {
+    if (Object.prototype.hasOwnProperty.call(constr, property)) {
+      switch (constr[property].cmp) {
+        case 0:
+          if (obj[property] !== constr[property].val) return false;
+          break;
+        case 1:
+          if (obj[property] > constr[property].val) return false;
+          break;
+        case 2:
+          if (obj[property] < constr[property].val) return false;
+          break;
+      }
+    }
+  }
+  return true;
+}
