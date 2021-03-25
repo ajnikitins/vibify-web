@@ -1,0 +1,2 @@
+!function(){var e,n=("undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:{}).parcelRequire5da7,i=n("5KvNW"),o=n("1pICp"),a=(e=i())&&e.__esModule?e:{default:e};o();const t=new URLSearchParams(window.location.search).get("token"),l={apiKey:"AIzaSyBjbtt6KSacD7G1Lsg5neyaJhYi7S6uUcY"};a.default.initializeApp(l).auth().signInWithCustomToken(t).then((function(){window.close()}))}();
+//# sourceMappingURL=login.61ee7e75.js.map
