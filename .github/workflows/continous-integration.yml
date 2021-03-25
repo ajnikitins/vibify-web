@@ -31,6 +31,17 @@ jobs:
           node-version: "15.x"
       - run: npm install
       - run: npm run predeploy
+        env:
+          FB_API_KEY: ${{ secrets.FB_API_KEY }}
+          FB_AUTH_DOM: ${{ secrets.FB_AUTH_DOM }}
+          FB_PROJ_ID: ${{ secrets.FB_PROJ_ID }}
+          FB_STOR_BUCK: ${{ secrets.FB_STOR_BUCK }}
+          FB_MESS_SEND_ID: ${{ secrets.FB_MESS_SEND_ID }}
+          FB_APP_ID: ${{ secrets.FB_APP_ID }}
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          REDIRECT_URI: ${{ secrets.REDIRECT_URI }}
+          BACKEND_URI: ${{ secrets.BACKEND_URI }}
+          BACKEND_REDIRECT_PATH: ${{ secrets.BACKEND_REDIRECT_PATH }}
           
       - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@v3
