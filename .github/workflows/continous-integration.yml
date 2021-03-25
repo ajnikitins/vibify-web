@@ -30,7 +30,6 @@ jobs:
         with:
           node-version: "15.x"
       - run: npm install
-      - run: npm run build-prod
         env:
           FB_API_KEY: ${{ secrets.FB_API_KEY }}
           FB_AUTH_DOM: ${{ secrets.FB_AUTH_DOM }}
@@ -42,6 +41,7 @@ jobs:
           REDIRECT_URI: ${{ secrets.REDIRECT_URI }}
           BACKEND_URI: ${{ secrets.BACKEND_URI }}
           BACKEND_REDIRECT_PATH: ${{ secrets.BACKEND_REDIRECT_PATH }}
+      - run: npm run build-prod
           
       - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@v3
