@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: "15.x"
       - run: npm install
-      - run: npm run predeploy
+      - run: npm run build-prod
         env:
           FB_API_KEY: ${{ secrets.FB_API_KEY }}
           FB_AUTH_DOM: ${{ secrets.FB_AUTH_DOM }}
